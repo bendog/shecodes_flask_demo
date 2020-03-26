@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block heading %}
+                <img src="{{ url_for('static', filename='images/dog.jpg') }}" alt="placeholder avatar">
+                <h1 id="main">BenjaminDog's Page</h1>
+{% endblock %}
+
+{% block content %}
+            <div id="intro">
+                <h5>My week at Flash</h5>
+                <p>Enslave the hooman toilet paper attack claws fluff everywhere meow miao french ciao litterbox and proudly present butt to human for the cat was chasing the mouse and where is my slave?</p>
+            </div>
+
+            <div id="flash-days">
+                
+                {% for project in all_projects %}
+                    <div class="flash-day box">
+                        <h4>{{ project.name }}</h4>
+                        <p>{{ project.description }}</p>
+                    </div>
+                {% endfor %}
+
+                {# <div class="flash-day box">
+                    <h4>Day 1 - html and css</h4>
+                    <p>Enslave the hooman toilet paper attack claws fluff everywhere meow miao french ciao litterbox and proudly present butt to human for the cat was chasing the mouse and where</p>
+                </div>
+                <div class="box">
+                    <h4> Day 2: Python</h4>
+                    <p>Enslave the hooman toilet paper attack claws fluff everywhere meow miao french ciao litterbox and proudly present butt to human for the cat was chasing the mouse and where</p>
+                </div>
+                <div class="box">
+                    <h4> Day 3: flash</h4>
+                    <p>Enslave the hooman toilet paper attack claws fluff everywhere meow miao french ciao litterbox and proudly present butt to human for the cat was chasing the mouse and where</p>
+                </div>
+                <div class="box">
+                    <h4> Day 4: Data and Algorithms</h4>
+                    <p>Enslave the hooman toilet paper attack claws fluff everywhere meow miao french ciao litterbox and proudly present butt to human for the cat was chasing the mouse and where</p>
+                </div> #}
+            </div>
+{% endblock %}

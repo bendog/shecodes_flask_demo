@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block heading %}
+    <h1>Update Project</h1>
+{% endblock %}
+
+{% block content %}
+<form  method="POST" action="">
+    <input type="text" name="name" placeholder="Project name">
+    <textarea name="description" placeholder="Project description"></textarea>
+    <button type="submit">Send Message</button>
+</form>
+{% endblock %}

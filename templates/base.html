@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ title }}</title>
+        <meta name="description" content="My Flash website">
+        <meta name="author" content="BenjaminDog">
+        <link rel="stylesheet" 
+            href="{{ url_for('static', filename='styles.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            {% include 'nav.html' %}
+            <div id="page-heading">
+                {% block heading %}
+                {% endblock %}
+            </div>
+        </header>
+        <div> 
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <footer>
+            <p>&copy Copyright BenjaminDog</p>
+        </footer>
+    </body>
+
+</html>
