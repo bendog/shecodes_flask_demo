@@ -2,6 +2,8 @@
 
 Simplified demo of Flask
 
+<!-- TOC -->autoauto- [Shecodes Flask Demo](#shecodes-flask-demo)auto    - [install dependences](#install-dependences)auto    - [shell / pipenv commands](#shell--pipenv-commands)auto        - [install](#install)auto        - [run](#run)auto        - [setup database](#setup-database)auto        - [make migrations](#make-migrations)auto        - [apply migrations](#apply-migrations)auto    - [notable changes](#notable-changes)auto    - [process of creating app.py](#process-of-creating-apppy)auto        - [**stage one:** show something](#stage-one-show-something)auto        - [**stage two:** show something pretty](#stage-two-show-something-pretty)auto        - [**stage three:** show more things](#stage-three-show-more-things)auto        - [**stage four:** create the database](#stage-four-create-the-database)auto            - [add packages with pipenv](#add-packages-with-pipenv)auto            - [setting up our flask database](#setting-up-our-flask-database)auto            - [defining our database model](#defining-our-database-model)auto            - [reading from the database model](#reading-from-the-database-model)auto            - [initialise, migrate and upgrade the database](#initialise-migrate-and-upgrade-the-database)auto        - [**stage five:**  adding data to the database.](#stage-five--adding-data-to-the-database)autoauto<!-- /TOC -->
+
 ---
 
 ## install dependences
