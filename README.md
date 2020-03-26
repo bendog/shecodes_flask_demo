@@ -2,29 +2,39 @@
 
 Simplified demo of Flask
 
+---
+
+## install dependences
+
+You'll need python 3.8
+
 You'll need to install pipenv to create your virtual environment, to enable the .env file for the environment variable settings, and also to run the commands to run flask.
 
 installing pipenv is as easy as
 - `sudo pip3 install pipenv` (on mac)
 - `pip install pipenv` (on windows)
 
-## install
+
+
+## shell / pipenv commands
+
+### install
 
     pipenv install
 
-## run
+### run
 
     pipenv run flask run
 
-## setup database
+### setup database
 
     pipenv run flask db init
 
-## make migrations
+### make migrations
 
     pipenv run flask db migrate
 
-## apply migrations
+### apply migrations
 
     pipenv run flask db upgrade
 
