@@ -2,7 +2,25 @@
 
 Simplified demo of Flask
 
-<!-- TOC -->autoauto- [Shecodes Flask Demo](#shecodes-flask-demo)auto    - [install dependences](#install-dependences)auto    - [shell / pipenv commands](#shell--pipenv-commands)auto        - [install](#install)auto        - [run](#run)auto        - [setup database](#setup-database)auto        - [make migrations](#make-migrations)auto        - [apply migrations](#apply-migrations)auto    - [notable changes](#notable-changes)auto    - [process of creating app.py](#process-of-creating-apppy)auto        - [**stage one:** show something](#stage-one-show-something)auto        - [**stage two:** show something pretty](#stage-two-show-something-pretty)auto        - [**stage three:** show more things](#stage-three-show-more-things)auto        - [**stage four:** create the database](#stage-four-create-the-database)auto            - [add packages with pipenv](#add-packages-with-pipenv)auto            - [setting up our flask database](#setting-up-our-flask-database)auto            - [defining our database model](#defining-our-database-model)auto            - [reading from the database model](#reading-from-the-database-model)auto            - [initialise, migrate and upgrade the database](#initialise-migrate-and-upgrade-the-database)auto        - [**stage five:**  adding data to the database.](#stage-five--adding-data-to-the-database)autoauto<!-- /TOC -->
+- [install dependences](#install-dependences)
+- [shell / pipenv commands](#shell--pipenv-commands)
+  - [install](#install)
+  - [run](#run)
+  - [setup database](#setup-database)
+  - [make migrations](#make-migrations)
+  - [apply migrations](#apply-migrations)
+- [notable changes](#notable-changes)
+- [process of creating app.py](#process-of-creating-apppy)
+  - [**stage one:** show something](#stage-one-show-something)
+  - [**stage two:** show something pretty](#stage-two-show-something-pretty)
+  - [**stage three:** show more things](#stage-three-show-more-things)
+  - [**stage four:** create the database](#stage-four-create-the-database)
+    - [add packages with pipenv](#add-packages-with-pipenv)
+    - [setting up our flask database](#setting-up-our-flask-database)
+    - [defining our database model](#defining-our-database-model)
+    - [reading from the database model](#reading-from-the-database-model)
+    - [initialise, migrate and upgrade the database](#initialise-migrate-and-upgrade-the-database)
+  - [**stage five:**  adding data to the database.](#stage-five--adding-data-to-the-database)
 
 ---
 
@@ -15,8 +33,6 @@ You'll need to install pipenv to create your virtual environment, to enable the 
 installing pipenv is as easy as
 - `sudo pip3 install pipenv` (on mac)
 - `pip install pipenv` (on windows)
-
-
 
 ## shell / pipenv commands
 
@@ -43,11 +59,10 @@ installing pipenv is as easy as
 ## notable changes
 
 1. use app.py as a name, as it avoids having to introduce the concept of environmental variables
-1. avoid blueprints, as we don't need to introduce the concept of multi-app tennancy to beginners
+1. avoid blueprints, as we don't need to introduce the concept of multi-app tenancy to beginners
 1. using pipenv, as it will load a .env file and have the same commands on windows, mac and linux.
 1. add a way to add data to the database via a website, this was more exciting than using a form somewhere else
 1. decided to use just one python file, as it makes it easier to conceptualise what's going on
-
 
 ## process of creating app.py
 
@@ -56,7 +71,9 @@ installing pipenv is as easy as
 install flask
 
     $ pipenv --three
+    ... creating
     $ pipenv install flask
+    ... installing
 
 create the environment file
 
@@ -86,12 +103,14 @@ if __name__ == '__main__':
 run flask
 
     $ pipenv run flask run
+    ... running 
 
 ### **stage two:** show something pretty
 
 copy in templates directory and files
 
 edit `app.py`
+
 ```python
 from flask import Flask, render_templates
 
@@ -156,7 +175,9 @@ there's a lot of bits that need to be added here, most of this can be copy paste
 #### add packages with pipenv
 
     $ pipenv install flask-sqlalchemy
+    ... installing
     $ pipenv install flask-migrate
+    ... installing
 
 next we edit `app.py`, i'm going to do this in stages starting from the top.
 
@@ -190,6 +211,7 @@ migrate = Migrate(app, db)
 ```
 
 We have to add a lot of config to our project to get the database working.
+
 - we need to import SQLAlchemy and Migrate
 - we need to configure where the database will be found
 - then we need to bind the database to our flask app
