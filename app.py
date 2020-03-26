@@ -42,12 +42,7 @@ class Project(db.Model):
 
 @app.route('/')
 def index():
-    # # get the database
-    # db = get_db()
-    # # get data from the database
-    # all_projects = db.execute(
-    #     'SELECT name, description FROM projects'
-    # ).fetchall()
+    # # get the data
     all_projects= Project.query.all()
     # return to template
     return render_template(
@@ -77,19 +72,11 @@ def update():
         description = data['description']
         print('description:', description)
 
+        # put the data in the database
         new_project = Project(name=name, description=description)
-
         db.session.add(new_project)
         db.session.commit()
         
-        # put the data in the database
-        # db = get_db()
-        # db.execute(
-        #     'INSERT INTO projects (name, description) VALUES (?, ?)',
-        #     (name, description)
-        # )
-        # db.commit()
-
         # redirect to home
         return redirect(url_for("index"), code=303)
 
